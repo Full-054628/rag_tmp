@@ -1,0 +1,179 @@
+/* app/features/chat/components/ChatArea.module.css */
+
+.chatArea {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffffff; /* 背景色を白に設定 */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+.chatHeader {
+  padding: 16px;
+  background-color: #007bff; /* ヘッダーの背景色をボタンと統一 */
+  color: white; /* ヘッダーのテキスト色を白に */
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.chatBody {
+  flex: 1;
+  padding: 16px;
+  background-color: #f9f9f9; /* チャットエリアの背景色 */
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 1rem;
+  position: relative;
+}
+
+.userMessage {
+  background-color: #007bff; /* ユーザーのメッセージ背景色 */
+  color: white; /* ユーザーのメッセージテキスト色 */
+  align-self: flex-end;
+}
+
+.botMessage {
+  background-color: #e0e0e0; /* ボットのメッセージ背景色 */
+  color: #333333; /* ボットのメッセージテキスト色 */
+  align-self: flex-start;
+}
+
+/* 吹き出しの矢印を追加 */
+.userMessage::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  border-width: 5px 0 5px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #007bff;
+}
+
+.botMessage::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  border-width: 5px 10px 5px 0;
+  border-style: solid;
+  border-color: transparent #e0e0e0 transparent transparent;
+}
+
+.chatPrompt {
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+.promptForm {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.promptInput {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  border-right: none;
+  height: 40px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  outline: none;
+}
+
+.promptInput:focus {
+  border-color: #007bff;
+}
+
+.promptButton {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+  border-radius: 0 20px 20px 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.promptButton:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.promptButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.promptButton:disabled {
+  background-color: #aaa;
+  border-color: #aaa;
+  cursor: not-allowed;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* レスポンシブデザインの強化 */
+@media (max-width: 768px) {
+  .chatArea {
+    border-radius: 0;
+  }
+
+  .promptInput {
+    font-size: 0.9rem;
+  }
+
+  .promptButton {
+    padding: 0 12px;
+  }
+
+  .chatHeader {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .chatBody {
+    padding: 12px;
+  }
+
+  .chatPrompt {
+    padding: 12px;
+  }
+}

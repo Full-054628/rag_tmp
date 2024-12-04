@@ -1,0 +1,21 @@
+.rightSidebar {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    gap: 10px; /* ボタン間のスペース */
+    padding: 16px;
+    background-color: #f5f5f5; /* 任意の背景色 */
+  }
+  
+  .rightSidebar button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .rightSidebar button:hover {
+    background-color: #0056b3;
+  }

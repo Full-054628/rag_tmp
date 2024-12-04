@@ -1,0 +1,57 @@
+/* app/features/chat/components/WelcomeScreen.module.css */
+
+.welcomeScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* 親要素の高さに合わせる */
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* 背景色を白に設定 */
+    border-radius: 12px; /* 角を丸くする */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* シャドウを追加 */
+    font-family: 'Roboto', sans-serif; /* フォントを適用 */
+  }
+  
+  .logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+    border-radius: 50%; /* 画像を丸くする */
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .welcomeText {
+    font-size: 1.8rem;
+    color: #007bff; /* カラーパレットの統一 */
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* レスポンシブデザインの強化 */
+  @media (max-width: 768px) {
+    .welcomeScreen {
+      padding: 10px;
+    }
+  
+    .logo {
+      max-width: 150px;
+      margin-bottom: 15px;
+    }
+  
+    .welcomeText {
+      font-size: 1.5rem;
+    }
+  }
+  
